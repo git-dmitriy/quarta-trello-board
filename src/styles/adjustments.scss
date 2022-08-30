@@ -1,0 +1,46 @@
+:root {
+  --primary-color: #0085ff;
+  --primary-color--hover: #006fd6;
+
+  --font-color-main: #091e42;
+  --font-color-secondary: #808ea5;
+
+  --border-color-main: #d8e0eb;
+  --border-color-main--hover: #0085ff;
+
+  --background-color-backdrop: #32384f20;
+  --background-color-main: #f2f3fb;
+  --background-color-panel: #ffffff;
+  --background-color-accordion: #f6f8fa;
+
+  --panel-width: 80px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--background-color-main);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  margin-left: var(--panel-width);
+}
