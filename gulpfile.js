@@ -10,8 +10,7 @@ const postcss = require('gulp-postcss');
 const gcmq = require('gulp-group-css-media-queries');
 const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+const webpack = require('webpack-stream');
 const svgo = require('gulp-svgo');
 const svgSprite = require('gulp-svg-sprite');
 const pug = require('gulp-pug');
@@ -153,9 +152,26 @@ function htmlToHtml() {
 function scripts() {
   return src(path.src.js)
     .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(concat('main.js', { newLine: ';' }))
-    .pipe(sourcemaps.write())
+    .pipe(
+      webpack({
+        mode: 'development',
+        watch: true,
+        output: {
+          filename: 'main.js',
+        },
+        module: {
+          rules: [
+            {
+              test: /\.jsx?$/,
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env'],
+              },
+            },
+          ],
+        },
+      })
+    )
     .pipe(dest(path.build.js))
     .pipe(
       reload({
@@ -167,13 +183,26 @@ function scripts() {
 function scripts_prod() {
   return src(path.src.js)
     .pipe(plumber())
-    .pipe(concat('main.js', { newLine: ';' }))
     .pipe(
-      babel({
-        presets: ['@babel/env'],
+      webpack({
+        mode: 'production',
+        watch: true,
+        output: {
+          filename: 'main.js',
+        },
+        module: {
+          rules: [
+            {
+              test: /\.jsx?$/,
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env'],
+              },
+            },
+          ],
+        },
       })
     )
-    .pipe(uglify())
     .pipe(dest(path.build.js))
     .pipe(
       reload({
@@ -209,12 +238,12 @@ function watching() {
 
 exports.default = series(
   removeFilesFromDist,
-  parallel(htmlToHtml, copyFonts, copyImages, icons, styles, scripts),
-  parallel(server, watching)
+  parallel(htmlToHtml, copyFonts, copyImages, icons, styles),
+  parallel(server, watching, scripts)
 );
 
 exports.build = series(
   removeFilesFromDist,
-  parallel(htmlToHtml, copyFonts, copyImages, icons, styles_prod, scripts_prod),
-  parallel(server, watching)
+  parallel(htmlToHtml, copyFonts, copyImages, icons, styles_prod),
+  parallel(server, watching, scripts_prod)
 );
