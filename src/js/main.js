@@ -1,5 +1,6 @@
 import { navbar } from './navbar';
 import { toggleDarkMode } from './darkmode';
+import { handleEmptyStage } from './handleEmptyStage';
 
 const btn = document.querySelector('.floating-btn');
 const backdrop = document.querySelector('.backdrop');
@@ -10,3 +11,4 @@ navbar({ btn, backdrop, nav, backDropActiveClass: 'backdrop_show' });
 
 toggleDarkMode({ btn: nightModeSwitcher, className: 'dark' });
 
+handleEmptyStage('.task-list');
