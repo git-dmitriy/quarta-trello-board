@@ -1,0 +1,19 @@
+.floating-btn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  padding: 0.9rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  transition: background-color 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--primary-color--hover);
+  }
+}

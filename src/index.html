@@ -239,6 +239,63 @@
           </ul>
         </section>
       </main>
+      <button class="floating-btn">
+        <svg class="svg-container">
+          <use xlink:href="img/icons/sprite.svg#settings" />
+        </svg>
+      </button>
+      <div class="backdrop">
+        <div class="settings-wrapper">
+          <fieldset class="settings">
+            <legend class="settings__heading">Настройки</legend>
+
+            <input
+              class="settings__input"
+              type="checkbox"
+              id="to-do"
+              checked="checked"
+            />
+            <label class="settings__label" for="to-do">
+              <span class="settings__check-mark">
+                <svg class="settings__check-mark-icon">
+                  <use xlink:href="img/icons/sprite.svg#check-mark" />
+                </svg>
+              </span>
+              <span>К выполнению</span>
+            </label>
+
+            <input
+              class="settings__input"
+              type="checkbox"
+              id="in-progress"
+              checked="checked"
+            />
+            <label class="settings__label" for="in-progress">
+              <span class="settings__check-mark">
+                <svg class="settings__check-mark-icon">
+                  <use xlink:href="img/icons/sprite.svg#check-mark" />
+                </svg>
+              </span>
+              <span>В работе</span>
+            </label>
+
+            <input
+              class="settings__input"
+              type="checkbox"
+              id="done"
+              checked="checked"
+            />
+            <label class="settings__label" for="done">
+              <span class="settings__check-mark">
+                <svg class="settings__check-mark-icon">
+                  <use xlink:href="img/icons/sprite.svg#check-mark" />
+                </svg>
+              </span>
+              <span>Выполнено</span>
+            </label>
+          </fieldset>
+        </div>
+      </div>
     </div>
   </body>
 </html>

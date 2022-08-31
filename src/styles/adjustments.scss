@@ -21,6 +21,7 @@ html,
 body {
   height: 100%;
   background-color: var(--background-color-main);
+  line-height: 1.2;
 }
 
 button {
@@ -28,6 +29,12 @@ button {
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 p {
