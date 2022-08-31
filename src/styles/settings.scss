@@ -96,7 +96,7 @@
   box-sizing: border-box;
   display: flex;
   border-radius: 3px;
-  background-color: #fff;
+  background-color: var(--background-color-panel);
   border: 1px solid var(--border-color-main);
 
   transition: background-color 0.3s, border-color 0.3s;
