@@ -185,15 +185,7 @@ function scripts_prod() {
 function icons() {
   return src(path.src.icons)
     .pipe(plumber())
-    .pipe(
-      svgo({
-        plugins: [
-          {
-            removeAttrs: { attrs: '(fill|stroke|style|width|height|data.*)' },
-          },
-        ],
-      })
-    )
+    .pipe(svgo())
     .pipe(
       svgSprite({
         mode: {
@@ -217,12 +209,12 @@ function watching() {
 
 exports.default = series(
   removeFilesFromDist,
-  parallel(htmlToHtml, copyFonts, copyImages, styles, scripts),
+  parallel(htmlToHtml, copyFonts, copyImages, icons, styles, scripts),
   parallel(server, watching)
 );
 
 exports.build = series(
   removeFilesFromDist,
-  parallel(htmlToHtml, copyFonts, copyImages, styles_prod, scripts_prod),
+  parallel(htmlToHtml, copyFonts, copyImages, icons, styles_prod, scripts_prod),
   parallel(server, watching)
 );

@@ -34,12 +34,18 @@
 .stage__add-task {
   width: 20px;
   height: 20px;
+  padding: 4px;
+  display: flex;
   background-color: var(--primary-color);
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   line-height: 1;
+
+  & > * {
+    margin: auto;
+  }
 
   &:hover,
   &:focus-visible {

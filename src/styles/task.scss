@@ -105,6 +105,11 @@
     color: var(--primary-color--hover);
   }
 }
+.task-footer__comments .svg-container,
+.task-footer__attached .svg-container {
+  width: 16px;
+  height: 16px;
+}
 
 .task-footer__attached,
 .task-footer__comments {
