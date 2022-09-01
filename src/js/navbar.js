@@ -1,7 +1,7 @@
 export const navbar = ({ btn, backdrop, nav, backDropActiveClass }) => {
   btn.addEventListener('click', () => {
     setTimeout(() => {
-      nav.style.transform = 'translateX(0px)';
+      nav.style.transform = 'translateX(0)';
       backdrop.style.opacity = '1';
     }, 0);
 

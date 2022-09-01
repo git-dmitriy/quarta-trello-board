@@ -3,34 +3,34 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 80px;
+  width: 5rem;
   box-sizing: border-box;
-  padding: 15px;
+  padding: 0.9375rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--background-color-panel);
-  border-right: 1px solid var(--border-color-main);
+  border-right: 0.0625rem solid var(--border-color-main);
 }
 .header__logo {
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   margin-bottom: auto;
 }
 .header__night-mode {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 25px;
+  width: 1.875rem;
+  height: 1.875rem;
+  margin-bottom: 1.5625rem;
 }
 .header__profile {
   display: flex;
   border-radius: 50%;
-  border: 3px solid transparent;
+  border: 0.1875rem solid transparent;
   transition: border-color 0.3s;
   outline: none;
 
   &:hover,
   &:focus-visible {
-    border: 3px solid var(--border-avatar-hover);
+    border: 0.1875rem solid var(--border-avatar-hover);
   }
 }
