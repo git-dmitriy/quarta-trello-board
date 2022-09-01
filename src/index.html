@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Trello board</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__logo">
+          <svg class="svg-container">
+            <use xlink:href="img/icons/sprite.svg#logo" />
+          </svg>
+        </div>
+
+        <button class="header__night-mode" data-night-mode-switcher>
+          <svg class="svg-container">
+            <use xlink:href="img/icons/sprite.svg#dark-mode" />
+          </svg>
+        </button>
+
+        <button class="header__profile">
+          <img src="img/user-male_big.png" alt="" />
+        </button>
+      </header>
+
+      <main class="stages">
+        <section class="stage stage_todo">
+          <header class="stage-header">
+            <h2 class="stage__heading">
+              К выполнению <span class="stage__count">2</span>
+            </h2>
+            <button class="stage__add-task">
+              <svg class="svg-container">
+                <use xlink:href="img/icons/sprite.svg#add-task" />
+              </svg>
+            </button>
+          </header>
+
+          <ul
+            class="task-list"
+            data-placeholder="Перетащите или добавьте новую задачу"
+          >
+            <li class="task-item">
+              <article class="task">
+                <header class="task__header">
+                  <h2 class="task__title">
+                    Подготовка оболочки для микрофронтендов
+                  </h2>
+                  <button class="task__options">
+                    <span class="task__options-dots"></span>
+                  </button>
+                </header>
+
+                <p class="task__content">
+                  Необходимо подготовить оболочку для сервисов А и Б. Также
+                  необходимо организовать CI/CD указанных сервисов.
+                </p>
+
+                <footer class="task-footer">
+                  <div class="task-footer__user">
+                    <img src="img/user-male.png" alt="" />
+                  </div>
+
+                  <button class="task-footer__comments">
+                    <svg class="svg-container">
+                      <use xlink:href="img/icons/sprite.svg#comments" />
+                    </svg>
+                    <span>32</span>
+                  </button>
+                </footer>
+              </article>
+            </li>
+
+            <li class="task-item">
+              <article class="task">
+                <header class="task__header">
+                  <h2 class="task__title">Сверстать тестовое задание</h2>
+                  <button class="task__options">
+                    <span class="task__options-dots"></span>
+                  </button>
+                </header>
+
+                <p class="task__content">Тестовое задание в аттаче.</p>
+
+                <footer class="task-footer">
+                  <button class="task-footer__assign">Назначить</button>
+
+                  <button class="task-footer__attached">
+                    <svg class="svg-container">
+                      <use xlink:href="img/icons/sprite.svg#attached" />
+                    </svg>
+                    <span>1</span>
+                  </button>
+                </footer>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!--  -->
+        <section class="stage stage_in-progress">
+          <header class="stage-header">
+            <h2 class="stage__heading">
+              В работе <span class="stage__count">0</span>
+            </h2>
+            <button class="stage__add-task">
+              <svg class="svg-container">
+                <use xlink:href="img/icons/sprite.svg#add-task" />
+              </svg>
+            </button>
+          </header>
+
+          <ul
+            class="task-list"
+            data-placeholder="Перетащите или добавьте новую задачу"
+          ></ul>
+        </section>
+
+        <!--  -->
+        <section class="stage stage_complete">
+          <header class="stage-header">
+            <h2 class="stage__heading">
+              Выполнено <span class="stage__count">3</span>
+            </h2>
+            <button class="stage__add-task">
+              <svg class="svg-container">
+                <use xlink:href="img/icons/sprite.svg#add-task" />
+              </svg>
+            </button>
+          </header>
+
+          <ul
+            class="task-list"
+            data-placeholder="Перетащите или добавьте новую задачу"
+          >
+            <li class="task-item">
+              <article class="task">
+                <header class="task__header">
+                  <h2 class="task__title">
+                    Подготовить тестовое задание HTML-верстальщик
+                  </h2>
+                  <button class="task__options"></button>
+                </header>
+
+                <p class="task__content">
+                  Подготовить в Figma тестовое задание для вакансии на позицию
+                  HTML-верстальщик. <br /><br />
+
+                  Все переиспользуемые компоненты и стили должны быть вынесены
+                  на отдельные страницы для удобства выполнения тестового
+                  задания.
+                </p>
+
+                <footer class="task-footer">
+                  <div class="task-footer__user">
+                    <img src="img/user-male.png" alt="" />
+                  </div>
+                  <button class="task-footer__attached">
+                    <svg class="svg-container">
+                      <use xlink:href="img/icons/sprite.svg#attached" />
+                    </svg>
+                    <span>1</span>
+                  </button>
+                  <button class="task-footer__comments">
+                    <svg class="svg-container">
+                      <use xlink:href="img/icons/sprite.svg#comments" />
+                    </svg>
+                    <span>4</span>
+                  </button>
+                </footer>
+              </article>
+            </li>
+
+            <li class="task-item">
+              <article class="task">
+                <header class="task__header">
+                  <h2 class="task__title">Открыть вакансию HTML-верстальщик</h2>
+                  <button class="task__options"></button>
+                </header>
+
+                <p class="task__content">
+                  Опубликовать вакансию на ресурсе https://www.hh.ru. <br />
+                  <br />
+                  Требования в аттаче.
+                </p>
+
+                <footer class="task-footer">
+                  <div class="task-footer__user">
+                    <img src="img/user-female.png" alt="" />
+                  </div>
+                  <button class="task-footer__attached">
+                    <svg class="svg-container">
+                      <use xlink:href="img/icons/sprite.svg#attached" />
+                    </svg>
+                    <span>1</span>
+                  </button>
+                  <button class="task-footer__comments">
+                    <svg class="svg-container">
+                      <use xlink:href="img/icons/sprite.svg#comments" />
+                    </svg>
+                    <span>9</span>
+                  </button>
+                </footer>
+              </article>
+            </li>
+            <li class="task-item">
+              <article class="task">
+                <header class="task__header">
+                  <h2 class="task__title">
+                    Подготовить техническую документацию по микрофронтендам
+                  </h2>
+                  <button class="task__options"></button>
+                </header>
+
+                <p class="task__content">
+                  Необходимо подготовить техническую документацию в формате
+                  markdown по микрофронтендам и опубликовать в витрине.
+                </p>
+
+                <footer class="task-footer">
+                  <div class="task-footer__user">
+                    <img src="img/user-male.png" alt="" />
+                  </div>
+                  <button class="task-footer__comments">
+                    <svg class="svg-container">
+                      <use xlink:href="img/icons/sprite.svg#comments" />
+                    </svg>
+                    <span>2</span>
+                  </button>
+                </footer>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <button class="floating-btn">
+        <svg class="svg-container">
+          <use xlink:href="img/icons/sprite.svg#settings" />
+        </svg>
+      </button>
+      <div class="backdrop">
+        <div class="settings-wrapper">
+          <fieldset class="settings">
+            <legend class="settings__heading">Настройки</legend>
+
+            <input
+              class="settings__input"
+              type="checkbox"
+              id="to-do"
+              checked="checked"
+            />
+            <label class="settings__label" for="to-do">
+              <span class="settings__check-mark">
+                <svg class="settings__check-mark-icon">
+                  <use xlink:href="img/icons/sprite.svg#check-mark" />
+                </svg>
+              </span>
+              <span>К выполнению</span>
+            </label>
+
+            <input
+              class="settings__input"
+              type="checkbox"
+              id="in-progress"
+              checked="checked"
+            />
+            <label class="settings__label" for="in-progress">
+              <span class="settings__check-mark">
+                <svg class="settings__check-mark-icon">
+                  <use xlink:href="img/icons/sprite.svg#check-mark" />
+                </svg>
+              </span>
+              <span>В работе</span>
+            </label>
+
+            <input
+              class="settings__input"
+              type="checkbox"
+              id="done"
+              checked="checked"
+            />
+            <label class="settings__label" for="done">
+              <span class="settings__check-mark">
+                <svg class="settings__check-mark-icon">
+                  <use xlink:href="img/icons/sprite.svg#check-mark" />
+                </svg>
+              </span>
+              <span>Выполнено</span>
+            </label>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
