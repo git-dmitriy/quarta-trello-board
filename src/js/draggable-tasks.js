@@ -8,7 +8,6 @@ export const draggableTasks = ({ elSelector, dropzoneSelector }) => {
     zone.addEventListener('dragover', (event) => event.preventDefault());
 
     zone.addEventListener('drop', (event) => {
-      console.log(event.target.classList);
       if (event.target.classList.contains(dropzoneSelector.slice(1))) {
         const id = event.dataTransfer.getData('text');
 
